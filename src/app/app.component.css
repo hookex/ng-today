@@ -1,0 +1,33 @@
+.blue {
+  color: rgb(79,134,236);
+}
+
+.red {
+  color: rgb(217,80,63)
+}
+
+.yellow {
+  color: rgb(242,189,66)
+}
+
+.green {
+  color: rgb(88,165,92)
+}
+
+.gray {
+  color: #5f6368;
+}
+
+section {
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.today {
+  margin-left: 10px;
+}
