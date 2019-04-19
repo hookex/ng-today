@@ -6,12 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  loading = true;
   constructor() {
 
   }
 
   ngOnInit(): void {
-    setTimeout(_ => this.loading = false, 0);
   }
 }

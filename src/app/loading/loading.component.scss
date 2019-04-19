@@ -1,0 +1,21 @@
+section {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.ng {
+  font-size: 10vw;
+}
+
+.today {
+  font-size: 10vw;
+  display: flex;
+  margin-left: 2vw;
+}

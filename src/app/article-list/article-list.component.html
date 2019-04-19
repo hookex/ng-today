@@ -1,6 +1,11 @@
-<ul>
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
+<ul *ngIf="items | async as items; else loading">
+  <a [routerLink]="'/articles/'+item.id"  *ngFor="let item of items">
+    <li class="text">
+      {{item.name}}
+    </li>
+  </a>
 </ul>
 
+<ng-template #loading>
+  <today-loading></today-loading>
+</ng-template>
