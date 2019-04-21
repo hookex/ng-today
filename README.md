@@ -1,4 +1,4 @@
 # ng.today
 
-http://ng.today
+https://ng.today
 
