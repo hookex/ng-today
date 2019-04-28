@@ -6,9 +6,9 @@
 ###  address
 
 #### 
-https://ng.today
+https://ng.today（需翻墙）
 
-https://ng-today.appspot.com/ (SSR version)
+https://ng-today.appspot.com/ (SSR version) （需翻墙）
 
 ### serve
 firebase、google cloud
