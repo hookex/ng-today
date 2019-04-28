@@ -3,12 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node dist/server",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "playground": "angular-playground"
+    "playground": "angular-playground",
+    "compile:server": "webpack --config webpack.server.config.js --progress --colors",
+    "serve:ssr": "node dist/server",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
+    "build:client-and-server-bundles": "ng build --prod && ng run ng-today:server:production",
+    "deploy:firebase": "firebase deploy",
+    "deploy:gcloud": "gcloud app deploy"
   },
   "private": true,
   "dependencies": {
@@ -23,14 +29,23 @@
     "@angular/material": "^7.3.7",
     "@angular/platform-browser": "^7.2.12",
     "@angular/platform-browser-dynamic": "^7.2.12",
+    "@angular/platform-server": "^7.2.14",
     "@angular/router": "^7.2.12",
     "@ionic/angular": "^4.2.0",
+    "@nguniversal/express-engine": "^7.1.1",
+    "@nguniversal/module-map-ngfactory-loader": "^7.1.1",
     "@nrwl/schematics": "^7.8.1",
+    "bufferutil": "^4.0.1",
     "core-js": "^2.5.4",
+    "express": "^4.15.2",
     "firebase": "^5.10.0",
     "hammerjs": "^2.0.8",
     "rxjs": "^6.0.0",
+    "ts-loader": "^5.4.4",
     "tslib": "^1.9.0",
+    "utf-8-validate": "^5.0.2",
+    "ws": "^6.2.1",
+    "xmlhttprequest": "^1.8.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -50,9 +65,11 @@
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
+    "ts-loader": "^5.2.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~3.2.4",
-    "angular-playground": "^5.4.3"
+    "angular-playground": "^5.4.3",
+    "webpack-cli": "^3.1.0"
   }
 }

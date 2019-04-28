@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {APP_ID, Inject, NgModule, PLATFORM_ID} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {MatCardModule, MatToolbarModule} from '@angular/material';
 
@@ -14,6 +14,7 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {ArticleComponent} from './article/article.component';
 import {LoadingComponent} from './loading/loading.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {isPlatformBrowser} from '@angular/common';
 
 const appRoutes: Routes = [{
   path: 'articles', component: ArticleListComponent,
@@ -32,15 +33,16 @@ const appRoutes: Routes = [{
     LoadingComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
 
     RouterModule.forRoot(
       appRoutes,
+      // SSR 不支持hash
       {
-        useHash: true,
-        enableTracing: true,
+        // useHash: true,
+        // enableTracing: true,
       }
     ),
 
@@ -52,4 +54,11 @@ const appRoutes: Routes = [{
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(APP_ID) private appId: string) {
+    const platform = isPlatformBrowser(platformId) ?
+      'in the browser' : 'on the server';
+    console.log(`Running ${platform} with appId=${appId}`);
+  }
 }

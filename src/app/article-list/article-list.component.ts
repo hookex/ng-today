@@ -17,7 +17,7 @@ export class ArticleListComponent implements OnInit {
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Item;
         const id = a.payload.doc.id;
-        return { id, ...data };
+        return {id, ...data};
       }))
     );
   }

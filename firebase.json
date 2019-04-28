@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/ng-today",
+    "public": "dist/browser/",
     "ignore": [
       "firebase.json",
       "**/.*",
