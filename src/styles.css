@@ -2,19 +2,19 @@
 
 
 .blue {
-  color: rgb(79,134,236);
+  color: rgb(79, 134, 236);
 }
 
 .red {
-  color: rgb(217,80,63)
+  color: rgb(217, 80, 63)
 }
 
 .yellow {
-  color: rgb(242,189,66)
+  color: rgb(242, 189, 66)
 }
 
 .green {
-  color: rgb(88,165,92)
+  color: rgb(88, 165, 92)
 }
 
 .gray {
@@ -22,5 +22,6 @@
 }
 
 body {
-  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  margin: 0;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }

@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {MatCardModule, MatToolbarModule} from '@angular/material';
 
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
@@ -12,6 +13,7 @@ import {ArticleListComponent} from './article-list/article-list.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {ArticleComponent} from './article/article.component';
 import {LoadingComponent} from './loading/loading.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [{
   path: 'articles', component: ArticleListComponent,
@@ -40,7 +42,11 @@ const appRoutes: Routes = [{
         useHash: true,
         enableTracing: true,
       }
-    )
+    ),
+
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

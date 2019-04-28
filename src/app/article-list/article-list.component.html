@@ -1,11 +1,22 @@
-<ul *ngIf="items | async as items; else loading">
-  <a [routerLink]="'/articles/'+item.id"  *ngFor="let item of items">
-    <li class="text">
-      {{item.name}}
-    </li>
-  </a>
-</ul>
-
 <ng-template #loading>
   <today-loading></today-loading>
 </ng-template>
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>NG Today</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div *ngIf="items | async as items; else loading">
+  <mat-card [routerLink]="'/articles/'+item.id" *ngFor="let item of items">
+    <mat-card-header>
+      <mat-card-title>{{item.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{item.content}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
