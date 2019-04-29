@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {APP_ID, Inject, NgModule, PLATFORM_ID} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {MatCardModule, MatToolbarModule} from '@angular/material';
+import {MatCardModule, MatToolbarModule, MatProgressBarModule} from '@angular/material';
 
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
@@ -49,6 +49,7 @@ const appRoutes: Routes = [{
     BrowserAnimationsModule,
     MatCardModule,
     MatToolbarModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
