@@ -6,7 +6,7 @@
 ###  address
 
 #### 
-https://ng.today（需翻墙）
+https://ng.today （需翻墙）
 
 https://ng-today.appspot.com/ (SSR version) （需翻墙）
 
